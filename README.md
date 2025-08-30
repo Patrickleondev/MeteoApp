@@ -4,24 +4,24 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![OpenWeather API](https://img.shields.io/badge/API-OpenWeather-orange.svg)](https://openweathermap.org/api)
 
-## 📱 Téléchargement
+##  Téléchargement
 
 **APK prêt à installer :** [MeteoApp-v1.0.0.apk](release/MeteoApp-v1.0.0.apk)
 
-## 📋 Description
+##  Description
 
 Cette application Flutter permet aux utilisateurs d'obtenir les prévisions météorologiques actuelles en saisissant le nom d'une ville. Les données sont récupérées en temps réel à partir de l'API OpenWeather.
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-- 🔍 **Recherche par ville** : Saisissez le nom d'une ville pour obtenir la météo
+-  **Recherche par ville** : Saisissez le nom d'une ville pour obtenir la météo
 - 🌡️ **Température en temps réel** : Affichage de la température en degrés Celsius
-- ☁️ **Description météo** : Conditions météorologiques détaillées
-- ⚡ **Interface réactive** : Indicateur de chargement et gestion des erreurs
-- 🎨 **Design moderne** : Interface utilisateur intuitive et esthétique
-- 🌍 **Support multilingue** : Interface en français
+-  **Description météo** : Conditions météorologiques détaillées
+-  **Interface réactive** : Indicateur de chargement et gestion des erreurs
+-  **Design moderne** : Interface utilisateur intuitive et esthétique
+-  **Support multilingue** : Interface en français
 
-## 🏗️ Architecture
+##  Architecture
 
 L'application est structurée en 3 classes principales :
 
@@ -44,7 +44,7 @@ L'application est structurée en 3 classes principales :
 - Affiche la température et la description météo
 - Interface visuelle avec icônes et mise en forme
 
-## 🚀 Installation
+##  Installation
 
 ### Option 1 : Installation directe (Recommandée)
 
@@ -71,7 +71,7 @@ L'application est structurée en 3 classes principales :
    flutter run
    ```
 
-## 🔧 Configuration de l'API
+##  Configuration de l'API
 
 ### Utilisation avec votre propre clé API
 
@@ -88,13 +88,13 @@ Pour personnaliser l'application avec votre propre clé API OpenWeather :
 
 L'application utilise actuellement une clé API configurée pour les tests. Pour un usage en production, utilisez votre propre clé.
 
-## 📦 Dépendances
+##  Dépendances
 
 - `flutter/material.dart` : Interface utilisateur
 - `http: ^0.13.3` : Requêtes HTTP vers l'API
 - `dart:convert` : Conversion JSON
 
-## 🔄 Fonctionnement technique
+##  Fonctionnement technique
 
 ### Appel API
 
@@ -118,7 +118,7 @@ L'application gère plusieurs types d'erreurs :
 - Erreurs de l'API
 - Données manquantes
 
-## 📱 Utilisation
+##  Utilisation
 
 1. **Lancez l'application**
 2. **Entrez le nom d'une ville** dans le champ de texte
@@ -126,7 +126,7 @@ L'application gère plusieurs types d'erreurs :
 4. **Attendez le chargement** des données
 5. **Consultez les informations** météorologiques affichées
 
-## 🛠️ Développement
+##  Développement
 
 ### Prérequis
 
@@ -148,16 +148,16 @@ Vérifiez la qualité du code :
 flutter analyze
 ```
 
-## 📈 Améliorations possibles
+##  Améliorations possibles
 
-- 🌡️ Ajout d'informations météorologiques supplémentaires (humidité, pression, vent)
-- 📅 Prévisions sur plusieurs jours
-- ⭐ Sauvegarde des villes favorites
-- 📍 Géolocalisation automatique
-- 🔔 Notifications météo
-- 🎨 Interface utilisateur améliorée avec animations
-- 🌙 Mode sombre
-- 📊 Graphiques météorologiques
+-  Ajout d'informations météorologiques supplémentaires (humidité, pression, vent)
+-  Prévisions sur plusieurs jours
+-  Sauvegarde des villes favorites
+-  Géolocalisation automatique
+-  Notifications météo
+- Interface utilisateur améliorée avec animations
+- Mode sombre
+- Graphiques météorologiques
 
 ## 🤝 Contribution
 
@@ -169,7 +169,7 @@ Les contributions sont les bienvenues ! Pour contribuer :
 4. Poussez vers la branche
 5. Ouvrez une Pull Request
 
-## 📄 Licence
+##  Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
@@ -179,12 +179,10 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 - **Documentation Flutter** : [https://docs.flutter.dev/](https://docs.flutter.dev/)
 - **API OpenWeather** : [https://openweathermap.org/api](https://openweathermap.org/api)
 
-## 📞 Support
+## Support
 
 Pour toute question ou problème :
 - Ouvrez une issue sur GitHub
 - Consultez la documentation Flutter et OpenWeather API
 
 ---
-
-**Développé avec ❤️ par Patrick Léon**
