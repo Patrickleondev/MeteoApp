@@ -9,7 +9,7 @@ android {
     namespace = "com.example.activite_4"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-    // buildToolsVersion = "33.0.0" // Commenté pour utiliser la version par défaut
+    buildToolsVersion = "34.0.0"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
