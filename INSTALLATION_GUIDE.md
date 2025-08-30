@@ -1,6 +1,6 @@
-utabl# Guide d'Installation - MeteoApp
+# Guide d'Installation - MeteoApp
 
-## 📱 Installation de l'APK
+##  Installation de l'APK
 
 ### Étape 1 : Téléchargement
 - Téléchargez l'APK depuis : `release/MeteoApp-v1.0.0.apk`
@@ -10,7 +10,7 @@ utabl# Guide d'Installation - MeteoApp
 2. **Installez l'APK** en le tapant
 3. **Lancez l'application**
 
-## ⚠️ Note importante sur les permissions
+## Note importante sur les permissions
 
 L'APK actuel fonctionne mais nécessite des permissions internet manuelles :
 
@@ -21,7 +21,7 @@ L'APK actuel fonctionne mais nécessite des permissions internet manuelles :
 3. **Permissions**
 4. **Activez "Internet" et "État du réseau"**
 
-## 🔧 Résolution des problèmes
+##  Résolution des problèmes
 
 ### Problème : "Erreur de connexion réseau"
 **Solution :** Vérifiez que les permissions internet sont activées
@@ -32,7 +32,7 @@ L'APK actuel fonctionne mais nécessite des permissions internet manuelles :
 ### Problème : "Erreur d'authentification API"
 **Solution :** La clé API est configurée et fonctionnelle
 
-## ✅ Test de fonctionnement
+##  Test de fonctionnement
 
 1. **Lancez l'application**
 2. **Entrez "Paris"** dans le champ de texte
@@ -41,15 +41,15 @@ L'APK actuel fonctionne mais nécessite des permissions internet manuelles :
    - Température (ex: 18.29°C)
    - Description (ex: ciel dégagé)
 
-## 🚀 Fonctionnalités confirmées
+##  Fonctionnalités confirmées
 
-- ✅ Récupération des données météo en temps réel
-- ✅ Interface utilisateur fonctionnelle
-- ✅ Gestion des erreurs améliorée
-- ✅ Support multilingue (français)
-- ✅ Design moderne et intuitif
+-  Récupération des données météo en temps réel
+-  Interface utilisateur fonctionnelle
+-  Gestion des erreurs améliorée
+-  Support multilingue (français)
+-  Design moderne et intuitif
 
-## 📞 Support
+##  Support
 
 Si vous rencontrez des problèmes :
 1. Vérifiez votre connexion internet
@@ -59,4 +59,3 @@ Si vous rencontrez des problèmes :
 
 ---
 
-**L'application est entièrement fonctionnelle et prête à être utilisée !** 🌤️
