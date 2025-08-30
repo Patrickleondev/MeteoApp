@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dart:async';
 import 'config.dart';
 
 void main() {
@@ -57,22 +58,57 @@ class _PrevisionInterfaceState extends State<PrevisionInterface> {
 
     try {
       final url = Config.buildWeatherUrl(ville);
-      final reponse = await http.get(Uri.parse(url));
+      
+      // Ajout d'un timeout de 10 secondes
+      final reponse = await http.get(
+        Uri.parse(url),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      ).timeout(
+        const Duration(seconds: 10),
+        onTimeout: () {
+          throw TimeoutException('Délai d\'attente dépassé');
+        },
+      );
       
       if (reponse.statusCode == 200) {
         setState(() {
           _donneesMeteo = json.decode(reponse.body);
           _isLoading = false;
         });
+      } else if (reponse.statusCode == 401) {
+        setState(() {
+          _errorMessage = 'Erreur d\'authentification API. Vérifiez la clé API.';
+          _isLoading = false;
+        });
+      } else if (reponse.statusCode == 404) {
+        setState(() {
+          _errorMessage = 'Ville "$ville" non trouvée. Vérifiez l\'orthographe.';
+          _isLoading = false;
+        });
       } else {
         setState(() {
-          _errorMessage = 'Erreur: Impossible de récupérer les données pour $ville';
+          _errorMessage = 'Erreur serveur (${reponse.statusCode}): Impossible de récupérer les données pour $ville';
           _isLoading = false;
         });
       }
     } catch (e) {
+      String errorMsg = 'Erreur de connexion';
+      
+      if (e.toString().contains('Failed host lookup')) {
+        errorMsg = 'Erreur de connexion réseau. Vérifiez votre connexion internet.';
+      } else if (e.toString().contains('SocketException')) {
+        errorMsg = 'Impossible de se connecter au serveur. Vérifiez votre connexion.';
+      } else if (e.toString().contains('TimeoutException')) {
+        errorMsg = 'Délai d\'attente dépassé. Réessayez.';
+      } else {
+        errorMsg = 'Erreur: $e';
+      }
+      
       setState(() {
-        _errorMessage = 'Erreur de connexion: $e';
+        _errorMessage = errorMsg;
         _isLoading = false;
       });
     }
@@ -129,19 +165,33 @@ class _PrevisionInterfaceState extends State<PrevisionInterface> {
                 ],
               ),
             
-            // Affichage des erreurs
-            if (_errorMessage.isNotEmpty)
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.red.shade100,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  _errorMessage,
-                  style: TextStyle(color: Colors.red.shade800),
-                ),
-              ),
+                         // Affichage des erreurs
+             if (_errorMessage.isNotEmpty)
+               Container(
+                 padding: const EdgeInsets.all(16),
+                 decoration: BoxDecoration(
+                   color: Colors.red.shade100,
+                   borderRadius: BorderRadius.circular(8),
+                 ),
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Text(
+                       _errorMessage,
+                       style: TextStyle(color: Colors.red.shade800),
+                     ),
+                     const SizedBox(height: 12),
+                     ElevatedButton(
+                       onPressed: _recupererDonnees,
+                       style: ElevatedButton.styleFrom(
+                         backgroundColor: Colors.red.shade600,
+                         foregroundColor: Colors.white,
+                       ),
+                       child: const Text('Réessayer'),
+                     ),
+                   ],
+                 ),
+               ),
             
                          // Affichage des données météo
              if (_donneesMeteo != null && !_isLoading)
