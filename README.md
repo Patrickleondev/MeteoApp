@@ -126,6 +126,11 @@ L'application gère plusieurs types d'erreurs :
 4. **Attendez le chargement** des données
 5. **Consultez les informations** météorologiques affichées
 
+<img width="623" height="1280" alt="image" src="https://github.com/user-attachments/assets/5f1c97c8-0836-49ad-8dbb-2daaf476352c" />
+
+<img width="623" height="1280" alt="image" src="https://github.com/user-attachments/assets/c43a8953-ed4c-4357-b92c-4e461e65f759" />
+
+
 ##  Développement
 
 ### Prérequis
